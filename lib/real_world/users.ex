@@ -1,4 +1,4 @@
-defmodule RealWorld.Accounts.Users do
+defmodule RealWorld.Users do
   @moduledoc """
   The boundry for the Users system
   """
@@ -13,7 +13,6 @@ defmodule RealWorld.Accounts.Users do
   def update_user(user, attrs) do
     user
     |> User.changeset(attrs)
-    |> RealWorld.Accounts.Auth.hash_password()
     |> Repo.update()
   end
 
